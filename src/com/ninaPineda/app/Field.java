@@ -1,3 +1,4 @@
+package com.ninaPineda.app;
 import java.awt.Point;
 import java.util.Random;
 
@@ -16,6 +17,18 @@ public class Field {
                 field[i][j] = rnd.nextBoolean(); 
             }
         }
+    }
+
+    public Field copy() {
+        Field copyField = new Field(this.size);
+        
+        for (int i = 0; i < this.size; i++) {
+            for (int j = 0; j < this.size; j++) {
+                copyField.field[i][j] = this.field[i][j];
+            }
+        }
+        
+        return copyField;
     }
 
     public int getSize(){
